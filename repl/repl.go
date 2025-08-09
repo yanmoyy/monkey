@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/yanmoyy/go-interpreter/evaluator"
 	"github.com/yanmoyy/go-interpreter/lexer"
 	"github.com/yanmoyy/go-interpreter/parser"
 )
@@ -42,8 +43,12 @@ func Start(in io.Reader, out io.Writer) {
 			printParserErrors(out, p.Errors())
 			continue
 		}
-		_, _ = io.WriteString(out, program.String())
-		_, _ = io.WriteString(out, "\n")
+
+		evaluated := evaluator.Eval(program)
+		if evaluated != nil {
+			_, _ = io.WriteString(out, evaluated.Inspect())
+			_, _ = io.WriteString(out, "\n")
+		}
 	}
 }
 
