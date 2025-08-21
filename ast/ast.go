@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"strings"
 
-	"github.com/yanmoyy/go-interpreter/token"
+	"github.com/yanmoyy/monkey/token"
 )
 
 type Node interface {

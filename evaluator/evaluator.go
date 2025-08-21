@@ -3,8 +3,8 @@ package evaluator
 import (
 	"fmt"
 
-	"github.com/yanmoyy/go-interpreter/ast"
-	"github.com/yanmoyy/go-interpreter/object"
+	"github.com/yanmoyy/monkey/ast"
+	"github.com/yanmoyy/monkey/object"
 )
 
 var (

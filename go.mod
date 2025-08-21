@@ -1,3 +1,3 @@
-module github.com/yanmoyy/go-interpreter
+module github.com/yanmoyy/monkey
 
 go 1.24.4

@@ -6,7 +6,7 @@ import (
 	"hash/fnv"
 	"strings"
 
-	"github.com/yanmoyy/go-interpreter/ast"
+	"github.com/yanmoyy/monkey/ast"
 )
 
 type ObjectType string
