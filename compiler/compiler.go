@@ -112,6 +112,19 @@ func (c *Compiler) Compile(node ast.Node) error {
 		symbol := c.symbolTable.Define(node.Name.Value)
 		c.emit(code.OpSetGlobal, symbol.Index)
 
+	case *ast.IndexExpression:
+		err := c.Compile(node.Left)
+		if err != nil {
+			return err
+		}
+
+		err = c.Compile(node.Index)
+		if err != nil {
+			return err
+		}
+
+		c.emit(code.OpIndex)
+
 	case *ast.InfixExpression:
 		if node.Operator == "<" {
 			err := c.Compile(node.Right)
