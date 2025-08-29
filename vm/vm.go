@@ -362,7 +362,7 @@ func (vm *VM) pop() object.Object {
 	return o
 }
 
-func (vm *VM) LastPoppedStackElement() object.Object {
+func (vm *VM) LastPoppedStackElem() object.Object {
 	return vm.stack[vm.sp] // previously popped element
 }
 
